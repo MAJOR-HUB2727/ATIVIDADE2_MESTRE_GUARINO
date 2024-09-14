@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promoção Brinde</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            border: 2px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #007BFF;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        #giftButton {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        #giftButton:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Parabéns!</h1>
+        <p>Você ganhou um brinde especial!</p>
+        <p>Para recebê-lo, clique no botão abaixo.</p>
+
+        <button id="giftButton" onclick="moveButton()">Enviar</button>
+    </div>
+
+    <script>
+        function moveButton() {
+            var button = document.getElementById("giftButton");
+            var randomX = Math.floor(Math.random() * (window.innerWidth - button.offsetWidth));
+            var randomY = Math.floor(Math.random() * (window.innerHeight - button.offsetHeight));
+            
+            button.style.position = "absolute";
+            button.style.left = randomX + "px";
+            button.style.top = randomY + "px";
+        }
+    </script>
+</body>
+</html>
